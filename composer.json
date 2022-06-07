@@ -1,0 +1,23 @@
+{
+    "name": "marian/linked-list",
+    "description": "Linked List for PHP",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LinkedList\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marian Trifu",
+            "email": "mariantrifu@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^6.0"
+    }
+}
