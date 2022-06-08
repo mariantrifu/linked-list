@@ -15,22 +15,16 @@ class SinglyLinkedList
     {
         $newNode = new Node($data, null);
 
-        if ($this->head === null) {
+        if ($this->head === null || $this->head->getData() >= $newNode->getData()) {
+            $newNode->setNext($this->head);
             $this->head = $newNode;
         } else {
-            $temp = $this->head;
-            while ($data > $temp->getData()) {
-                if ($temp->getNext() !== null) {
-                    if ($data < $temp->getNext()->getData()) {
-                        $newNode->setNext($temp->getNext());
-                        $temp->setNext($newNode);
-                    } else {
-                        $temp = $temp->getNext();
-                    }
-                } else {
-                    $temp->setNext($newNode);
-                }
+            $current = $this->head;
+            while ($current->getNext() !== null && $current->getNext()->getData() < $newNode->getData()) {
+                $current = $current->getNext();
             }
+            $newNode->setNext($current->getNext());
+            $current->setNext($newNode);
         }
     }
 
