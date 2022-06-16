@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LinkedList;
 
 class Node
@@ -16,11 +18,6 @@ class Node
     public function getData(): int
     {
         return $this->data;
-    }
-
-    public function setData(int $data): void
-    {
-        $this->data = $data;
     }
 
     public function getNext(): ?Node
